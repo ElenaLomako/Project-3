@@ -1,4 +1,4 @@
-# Project 3
+# Visualizing Electricity Usage and Rates
 #### Authors:
 ###### Andrew Cheng, Paul Samaniego, Elena Lomako, Riya Gajjar, Madeline Cruz
 
@@ -7,24 +7,43 @@ The US Energy Information Administration (EIA) hosts and collects information ga
 
 Using the [Sales (consumption), revenue, prices & customers annual dataset](https://www.eia.gov/electricity/data.php#sales), we aim to create a webpage containing interactive visualization elements to assist in the public understanding of electricity usage and price, and how these features change over time.
 
-## Scope and Responsibilities
-* Andrew: Subset main table
-* Riya: 
-* Paul:
-* Elena:
-* Madeline: 
+Technologies and API's
+* Python 
+  * Pandas
+  * Flask
+* Javascript
+  * Leaflet
+  * D3
+* SQL
 
-## Deliverables
-1. Split Tables - Andrew
-2. Create SQL - 
-3. Flask API - Elena
-3. Build HTML - 
-4. Build JS scripts - ALL 
-   * Bar/ line / bubble graph - Mads
-   * Metadata/ dropdowns - Mads
-   * Spatial heatmap - Paul
-     * 
+## Scope and Responsibilities
+* Andrew
+  *  Subset main table
+  *  Setup schema in SQL
+  *  Build HTML
+  *  JS scripts
+* Riya
+  * JS Scripts
+* Paul
+  *  JS Scripts
+* Elena:
+  *  Setup schema in SQL
+  *  Flask setup
+* Madeline:
+  *  HTML formatting
+  *  JS Scripts
 
 Data source: https://www.eia.gov/electricity/data.php#sales
 
-# Log 
+## Project Pipeline
+* ~~Split main dataframe into multiple tables~~
+* ~~Schema setup in SQL~~
+* Build flask API
+* Set up HTML webpage
+* Javascript scripts
+  * Use leaflet to create interactive spatial heatmap
+  * Use Plotly to visualize price/ states using bubble plot (TBD)
+  * Use Plotly to visualize price/ states/ usage overtime
+
+## Data Sources
+[Sales (consumption), revenue, prices & customers annual dataset](https://www.eia.gov/electricity/data.php#sales)
