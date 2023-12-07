@@ -10,7 +10,6 @@
 
 ## Introduction <a name="introduction"></a>
 
---------
 ### Summary  <a name="summary"></a>
 The US Energy Information Administration (EIA) hosts and collects information gathered across different energy sectors and jurisdictions to promote sound policymaking, efficient markets and public understanding of energy and its interactions with the economy and environment.
 
@@ -19,7 +18,7 @@ Using the [Sales (consumption), revenue, prices & customers annual dataset](http
 The primary objective for this project is to use a versatile technology stack; incorporating SQL, Python, HTML, and Javascript to create a dashboard of interactive visualizations. These visualizations are meant to demonstrate how electricity usage differs across states over time.
 ## Featured Files and Links  <a name="featured"></a>
 
---------
+
 * Presentation Deck
 * [Visualization Dashboard (WIP)]()
 * [SQL Schema](https://github.com/ElenaLomako/Project-3/blob/main/schema.sql)
@@ -29,7 +28,6 @@ The primary objective for this project is to use a versatile technology stack; i
 
 ## Technologies and API  <a name="tech-stack"></a>
 
---------
 ```
 Python
 ├── statsmodels 0.14.0
