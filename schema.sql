@@ -1,21 +1,21 @@
 --Drop table if exist
---DROP TABLE IF EXISTS keys;
---DROP TABLE IF EXISTS residential;
---DROP TABLE IF EXISTS commercial;
---DROP TABLE IF EXISTS industrial;
---DROP TABLE IF EXISTS transportation;
---DROP TABLE IF EXISTS total;
+-- DROP TABLE IF EXISTS key_data;
+-- DROP TABLE IF EXISTS residential;
+-- DROP TABLE IF EXISTS commercial;
+-- DROP TABLE IF EXISTS industrial;
+-- DROP TABLE IF EXISTS transportation;
+-- DROP TABLE IF EXISTS total;
 
 
 -- Create new table
-CREATE TABLE keys(
+CREATE TABLE key_data(
 	id VARCHAR (10) NOT NULL PRIMARY KEY, 
 	year INT NOT NULL,
 	state VARCHAR (2) NOT NULL
 	
 );
 
-SELECT * FROM keys;
+SELECT * FROM key_data;
 
 -- import the keys table 
 
@@ -26,7 +26,7 @@ CREATE TABLE residential(
 	sales INT NOT NULL,
 	customers INT NOT NULL,
 	price FLOAT NOT NULL,
-	FOREIGN KEY (id) REFERENCES keys(id)
+	FOREIGN KEY (id) REFERENCES key_data(id)
 );
 
 SELECT * FROM residential;
@@ -40,7 +40,7 @@ CREATE TABLE commercial(
 	sales INT NOT NULL,
 	customers INT NOT NULL,
 	price FLOAT NOT NULL,
-	FOREIGN KEY (id) REFERENCES keys(id)
+	FOREIGN KEY (id) REFERENCES key_data(id)
 );
 
 SELECT * FROM commercial;
@@ -54,7 +54,7 @@ CREATE TABLE industrial(
 	sales INT NOT NULL,
 	customers INT NOT NULL,
 	price FLOAT NOT NULL,
-	FOREIGN KEY (id) REFERENCES keys(id)
+	FOREIGN KEY (id) REFERENCES key_data(id)
 );
 
 SELECT * FROM industrial;
@@ -68,7 +68,7 @@ CREATE TABLE transportation(
 	sales INT NOT NULL,
 	customers INT NOT NULL,
 	price FLOAT NOT NULL,
-	FOREIGN KEY (id) REFERENCES keys(id)
+	FOREIGN KEY (id) REFERENCES key_data(id)
 );
 
 SELECT * FROM transportation;
@@ -82,7 +82,7 @@ CREATE TABLE total(
 	sales BIGINT NOT NULL,
 	customers INT NOT NULL,
 	price FLOAT NOT NULL,
-	FOREIGN KEY (id) REFERENCES keys(id)
+	FOREIGN KEY (id) REFERENCES key_data(id)
 );
 
 SELECT * FROM total;
