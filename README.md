@@ -2,11 +2,12 @@
 #### Contributors: [Elena Lomako](https://github.com/ElenaLomako), [Andrew Cheng](https://github.com/anderoos), [Paul Samaniego](https://github.com/Psamaniego001), [Riya Gajjar](https://github.com/rgajjar111), [Madeline Cruz](https://github.com/Mad-Cruz)
 ## Table of Contents
 1. [Introduction](#intro)
-   2. [Summary](#summary)
-   3. [Objectives](#objectives)
-4. [Featured Files and Links](#featured)
-5. [Technologies](#tech-stack)
-6. [Resources](#resources)
+    1. [Summary](#summary)
+    2. [Objectives](#objectives)
+2. [Featured Files and Links](#featured)
+3. [Technologies](#tech-stack)
+4. [Resources](#resources)
+
 ## Introduction <a name="introduction"></a>
 
 --------
