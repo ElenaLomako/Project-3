@@ -64,11 +64,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="b-container box-shadow col-md-12">
-                        <div class="col-md-12 text-styling">
-                            My map here
-                            <!--                <div id="map"></div>-->
-                        </div>
+                    <div class="b-container box-shadow col-md-12">        
+                      <div id="map"></div>
                     </div>
                 </div>
                 <div class="row">
@@ -83,17 +80,22 @@
 <!--DATA CONTAINER ENDS HERE-->
         </div>
     </div>
+    <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+
+<!-- D3 JavaScript -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<!-- leaflet-choropleth JavaScript -->
+<script type="text/javascript" src="static/js/choropleth.js"></script>
+
+<!-- Our JavaScript -->
+<script type="text/javascript" src="logic-PS.js"></script>
+<!--        Tabulator-->
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+    
 </body>
-
-<!--    External Libraries-->
-    <!--        Leaflet-->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <!--        Leaflet-Chloropleth-->
-    <script type="text/javascript" src="static/js/choropleth.js"></script>
-    <!--        D3-->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <!--        Tabulator-->
-    <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
-
 
 </html>
