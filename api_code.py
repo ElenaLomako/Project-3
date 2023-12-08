@@ -57,27 +57,27 @@ def welcome():
     """List all available api routes."""
     return (
         f"Available Routes:<br/>"
-        f"/api/v1.0/keys<br/>"
+        # f"/api/v1.0/keys<br/>"
         f"/api/v1.0/residential<br/>"
         f"/api/v1.0/commercial<br/>"
         f"/api/v1.0/industrial<br/>"
         f"/api/v1.0/transportation<br/>"
-        f"/api/v1.0/total<br/>"
+        f"/api/v1.0/all_sectors_combined<br/>"
     )
 @app.route("/api/v1.0/keys")
-def keys_data():
-    """Return data from the keys table."""
-    results = session.query(Keys_table.id, Keys_table.year, Keys_table.state).all()
-    # Create a list of id, year, state that will be appended with dictionary values for id, year, state queried above
-    keys_data_query = []
-    for id, year, state in results:
-        key_dict = {}
-        key_dict["id"] = id
-        key_dict["year"] = year
-        key_dict["state"] = state
-        keys_data_query.append(key_dict)
+# def keys_data():
+#     """Return data from the keys table."""
+#     results = session.query(Keys_table.id, Keys_table.year, Keys_table.state).all()
+#     # Create a list of id, year, state that will be appended with dictionary values for id, year, state queried above
+#     keys_data_query = []
+#     for id, year, state in results:
+#         key_dict = {}
+#         key_dict["id"] = id
+#         key_dict["year"] = year
+#         key_dict["state"] = state
+#         keys_data_query.append(key_dict)
 
-    return jsonify(keys_data_query)
+#     return jsonify(keys_data_query)
 
 
 
@@ -148,7 +148,7 @@ def get_transportation():
 
     return jsonify(Transportation_data_query)
 
-@app.route("/api/v1.0/total")
+@app.route("/api/v1.0/all_sectors_combined")
 def get_total():
     """Return data from the total table."""
     results = session.query(Total.id, Total.revenue, Total.sales, Total.customers, Total.price).all()
