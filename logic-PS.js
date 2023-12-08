@@ -53,7 +53,7 @@ function yearHeat(data, year) {
             // displaying the map
             let myMap = L.map("map", {
                 center: [37.09, -93.71],
-                zoom: 5,
+                zoom: 4,
                 layers: [street]
             });
             // using choropleth to create a color range amongst States based on the price

@@ -1,3 +1,54 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#map,
+body,
+html {
+  height: 100%;
+}
+
+.leaflet-popup-content {
+  text-align: center;
+}
+
+/* CSS from the leaflet-choropleth documentation */
+.legend {
+  color: #555;
+  padding: 6px 8px;
+  font: 12px Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+.legend ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+.legend li {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+}
+.legend .min {
+  float: left;
+  padding-bottom: 5px;
+}
+.legend .max {
+  float: right;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* ANDREWS CODE */
+
 /* Custom CSS for the sidebar */
 /*.sidebar {*/
 /*  height: 100vh; !* Set sidebar height to 100% of the viewport *!*/
@@ -164,64 +215,3 @@
   font-family: Helvetica Neue;
   font-weight: 700;
 }
-
-<<<<<<< HEAD
-body {
-  padding: 0;
-  margin: 0;
-}
-
-=======
-/*THIS SECTION IS FOR PAULS CSS*/
-/*!!!! DO NOT DELETE !!!!*/
->>>>>>> e7b926a72dff5f74cd6a56bde8ebac9d15c08dd4
-#map,
-body,
-html {
-  height: 100%;
-}
-
-.leaflet-popup-content {
-  text-align: center;
-}
-
-/* CSS from the leaflet-choropleth documentation */
-.legend {
-  color: #555;
-  padding: 6px 8px;
-  font: 12px Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  background: white;
-  background: rgba(255,255,255,0.8);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 5px;
-}
-.legend ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  clear: both;
-}
-.legend li {
-  display: inline-block;
-  width: 30px;
-  height: 22px;
-}
-.legend .min {
-  float: left;
-  padding-bottom: 5px;
-}
-.legend .max {
-  float: right;
-}
-
-<<<<<<< HEAD
-h1 {
-  text-align: center;
-}
-
-=======
-/*h1 {*/
-/*  text-align: center;*/
-/*}*/
->>>>>>> e7b926a72dff5f74cd6a56bde8ebac9d15c08dd4
