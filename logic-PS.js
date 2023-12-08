@@ -53,7 +53,7 @@ function yearHeat(data, year) {
             // displaying the map
             let myMap = L.map("map", {
                 center: [37.09, -93.71],
-                zoom: 5,
+                zoom: 4,
                 layers: [street]
             });
             // using choropleth to create a color range amongst States based on the price
@@ -80,12 +80,12 @@ function yearHeat(data, year) {
                     if (stateData) {
                         layer.bindPopup(
                             
-                            "<h5><strong> State: </strong>" + stateData.state_name + "</h5>" +  
-                            "<h5><strong> State Abbreviation: </strong>" + stateData.state_code + "</h5>" + "<br/> " +
-                            "<h5><strong> Megawatt hours: </strong>" + numberFormat(stateData.sales) + "</h5>" +
-                            "<h5><strong> Price per hour: </strong>" + currencyFormat(stateData.price/100) + "</h5>" +
-                            "<h5><strong> Revenue: </strong>" + currencyFormat(stateData.revenue) + "</h5>" + "<br/> " +
-                            "<h5><strong> Customer Count: </strong>" + numberFormat(stateData.customer) + "</h5>");
+                            "<h6><strong> State: </strong>" + stateData.state_name + "</h6>" +  
+                            "<h6><strong> State Abbreviation: </strong>" + stateData.state_code + "</h6>" + "<br/> " +
+                            "<h6><strong> Megawatt hours: </strong>" + numberFormat(stateData.sales) + "</h6>" +
+                            "<h6><strong> Price per hour: </strong>" + currencyFormat(stateData.price/100) + "</h6>" +
+                            "<h6><strong> Revenue: </strong>" + currencyFormat(stateData.revenue) + "</h6>" + "<br/> " +
+                            "<h6><strong> Customer Count: </strong>" + numberFormat(stateData.customer) + "</h6>");
 
                     }
                 }

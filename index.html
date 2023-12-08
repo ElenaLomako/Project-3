@@ -11,85 +11,91 @@
     <!--        Leaflet CSS-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <!--        Custom CSS-->
-    <link rel="stylesheet" href="static/css/sidebar.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <!--        Tabulator CSS-->
+    <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Vertical Navigation Bar -->
-            <nav class="col-md-2 d-md-block sidebar">
-                <nav class="col-md-2 d-md-block sidebar_nested">
-                    <div class="position-sticky">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <div class="text-left">
-                                    <h2>Visualizing Electricity Usage & Rates in the US</h2>
-                                    <br>
-                                    <br>
-                                </div>
-                                <div class="text-left">
-                                    <h3 class="panel-title"><small>FILTERS</small></h3>
-                                    <h6>State</h6>
-                                    <select id="selDataset" onchange="optionChanged(this.value)"></select>
-                                     <h6>Year</h6>
-                                    <select id="selDataset" onchange="optionChanged(this.value)"></select>
-                                    <br>
-                                    <br>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <div class="text-left">
-                                    <h3><small>Summaries</small></h3>
-                                    <br>
-                                    <p> whatever </p>
-                                    <div id="metadata" class="panel-body">
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </nav>
-            <!-- Main content area -->
-        <main class="col-md-8">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="https://www150.statcan.gc.ca/n1/edu/power-pouvoir/c-g/c-g05-2-1-eng.png" alt="cat">
-                    </div>
-                    <div class="col-md-3">
-                        <img src="https://www150.statcan.gc.ca/n1/edu/power-pouvoir/c-g/c-g05-2-1-eng.png" alt="cat">
+    <div class="bg_style">
+        <div class="primary-container col-md-12 box-shadow">
+<!--LEFT PANEL CODE STARTS HERE-->
+            <div class="sidebar_panel">
+                <div class="h1-container box-shadow">
+                    <div style="width: 144px; height: 108px; left: 35px; top: 30px; position: absolute; color: black; font-size: 24px; font-family: Helvetica Neue; font-weight: 700; word-wrap: break-word"><h4>Visualizing Electricity Usage and Rates Dashboard</h4></div>
+                    <div class="filters"><h5>Filters</h5>
+                        <br>
+                        <h6>Sector</h6>
+                        <select id="selSector" onchange="optionChanged(this.value)"></select><br>
+                        <br>
+                        <h6>Year</h6>
+                        <select id="selYear" onchange="optionChanged(this.value)"></select>
                     </div>
                 </div>
-                <div class="row">
-                <div class="col-md-8">
-                    <div class="map-container">
-                        <img src="https://www150.statcan.gc.ca/n1/edu/power-pouvoir/c-g/c-g05-2-1-eng.png" alt="cat">
+                <div class="hyperlink-container">
+                    <div style="left: 20%; top: 0%; position: absolute; color: black; font-size: 14px; font-family: Helvetica Neue; font-weight: 600; word-wrap: break-word">
+                        <br><p><a href="https://github.com/ElenaLomako/Project-3">Github Repository</a></p><br/>
                     </div>
-                </div>
                 </div>
             </div>
-        </main>
+<!--DATA CONTAINER STARTS HERE-->
+            <div class="data-container row">
+<!--                <div class="summary-container box-shadow col-md-12">-->
+<!--                    <div class="col-md-12">-->
+<!--                        <h4 class="summary-styling">Yearly Summary</h4>-->
+<!--                    </div>-->
+<!--                    <div style="width: 8%; height: 0px; left: 20%; top: 16%; position: absolute; transform: rotate(90deg); opacity:0.2; transform-origin: 0 0; border: 1px black solid"></div>-->
+<!--                    <div style="width: 8%; height: 0px; left: 40%; top: 16%; position: absolute; transform: rotate(90deg); opacity:0.2; transform-origin: 0 0; border: 1px black solid"></div>-->
+<!--                    <div style="width: 8%; height: 0px; left: 60%; top: 16%; position: absolute; transform: rotate(90deg); opacity:0.2; transform-origin: 0 0; border: 1px black solid"></div>-->
+<!--                    <div style="width: 8%; height: 0px; left: 80%; top: 16%; position: absolute; transform: rotate(90deg); opacity:0.2; transform-origin: 0 0; border: 1px black solid"></div>-->
+<!--                </div>-->
+                <div class="row">
+                    <div class="l-container box-shadow">
+                        <div class="col-md-6 text-styling">
+                            my chart 1 here
+                            <!--            <div id="plotclass"></div>-->
+                        </div>
+                    </div>
+                    <div class="r-container box-shadow">
+                        <div class="col-md-6 text-styling">
+                            my chart 2 here
+                            <!--            <div id="plotclass"></div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="b-container box-shadow col-md-12">        
+                      <div id="map"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="table-container box-shadow col-md-12">
+                        <div class="col-md-12 text-styling">
+                            <div id="data-table"></div>
+                            data table here
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--DATA CONTAINER ENDS HERE-->
         </div>
     </div>
+    <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
 
-<!--        uncomment when plots are ready-->
-<!--        <div class="col-md-6">-->
-<!--            <div id="plotclass"></div>-->
-<!--        </div>-->
-<!--        <div class="col-md-5">-->
-<!--            <div id="plotclass"></div>-->
-<!--        </div>-->
-<!--        <div class="col-md-12">-->
-<!--            <div class="map-container">-->
-<!--                <div id="map"></div>-->
-<!--            </div>-->
-<!--        </div>-->
+<!-- D3 JavaScript -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<!-- leaflet-choropleth JavaScript -->
+<script type="text/javascript" src="static/js/choropleth.js"></script>
+
+<!-- Our JavaScript -->
+<script type="text/javascript" src="logic-PS.js"></script>
+<!--        Tabulator-->
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+    
 </body>
-
-<!--&lt;!&ndash;    External Libraries&ndash;&gt;-->
-    <!--        Leaflet-->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <!--        D3-->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
 
 </html>
