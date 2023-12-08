@@ -35,7 +35,7 @@ for class_name in Base.classes.keys():
     print(class_name)
 
 # Save references to each table
-Keys_table = Base.classes.key_data
+#Keys_table = Base.classes.key_data
 Residential = Base.classes.residential
 Commercial = Base.classes.commercial
 Industrial = Base.classes.industrial
