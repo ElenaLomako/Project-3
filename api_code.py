@@ -16,13 +16,7 @@ from flask_cors import CORS
 #################################################
 
 # Database connection parameters
-db_params = {
-    'host': 'localhost',
-    'port': '5432',
-    'user': 'postgres',
-    'password': 'postgres',
-    'database': 'project 3',
-}
+from passwords import db_params
 
 # Create an engine
 engine = create_engine(f"postgresql://{db_params['user']}:{db_params['password']}@{db_params['host']}:{db_params['port']}/{db_params['database']}")
