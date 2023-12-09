@@ -67,20 +67,6 @@ def welcome():
         f"/api/v1.0/all_sectors_combined<br/>"
     )
 
-# @app.route("/api/v1.0/keys")
-# def keys_data():
-#     """Return data from the keys table."""
-#     results = session.query(Keys_table.id, Keys_table.year, Keys_table.state).all()
-#     # Create a list of id, year, state that will be appended with dictionary values for id, year, state queried above
-#     keys_data_query = []
-#     for id, year, state in results:
-#         key_dict = {}
-#         key_dict["id"] = id
-#         key_dict["year"] = year
-#         key_dict["state"] = state
-#         keys_data_query.append(key_dict)
-
-#     return jsonify(keys_data_query)
 @app.route("/api/v1.0/keys")
 @cross_origin()
 def keys_data():
