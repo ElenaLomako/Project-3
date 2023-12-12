@@ -14,6 +14,7 @@ Technologies and API's
 * Javascript
   * Leaflet
   * D3
+  * Tabulator
 * SQL
 
 ## Scope and Responsibilities
@@ -23,15 +24,15 @@ Technologies and API's
   *  Build HTML/ CSS 
   *  Extraneous interactive web elements (js-d3)
 * Riya
-  * Bar Visualization (js-plotly)
-  * Bubble Visualization (js-plotly)
+  * Bar plot visualization (js-plotly)
+  * Bubble chart visualization (js-plotly)
 * Paul
   *  Spatial Heatmap (js-leaflet)
 * Elena:
   *  Setup SQL Database (sql)
-  *  Flask setup (py)
+  *  Flask local server setup (py)
 * Madeline:
-  *  Data filters and metadata (js)
+  *  Data filters and bubble chart (js)
 
 
 Data source: https://www.eia.gov/electricity/data.php#sales

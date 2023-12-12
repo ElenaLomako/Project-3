@@ -19,11 +19,10 @@ The primary objective for this project is to use a versatile technology stack; i
 ## Featured Files and Links  <a name="featured"></a>
 
 
-* Presentation Deck
 * [Visualization Dashboard (WIP)]()
 * [SQL Schema](https://github.com/ElenaLomako/Project-3/blob/main/schema.sql)
 * HTML script
-* JS Script
+* JS Scripts 
 
 
 ## Technologies and API  <a name="tech-stack"></a>
@@ -37,7 +36,7 @@ Python
 Javascript
 ├── Leaflet 1.9.4
 ├── D3 7.8.5
-├── App not covered in class?
+├── Tabulator 5.5
 └── Plotly 5.18.0
 SQL
 ```

@@ -1,9 +1,4 @@
-import numpy as np
-import pandas as pd
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
 from sqlalchemy import create_engine
 from sqlalchemy.ext.automap import automap_base
 from flask_cors import CORS, cross_origin
@@ -11,18 +6,12 @@ from flask_cors import CORS, cross_origin
 from flask import Flask, jsonify
 from flask_cors import CORS
 
+# SQL server password
+from passwords import db_params
+
 #################################################
 # Database Setup
 #################################################
-
-# Database connection parameters
-db_params = {
-    'host': 'localhost',
-    'port': '5432',
-    'user': 'postgres',
-    'password': 'postgres',
-    'database': 'project 3',
-}
 
 # Create an engine
 engine = create_engine(f"postgresql://{db_params['user']}:{db_params['password']}@{db_params['host']}:{db_params['port']}/{db_params['database']}")
@@ -192,6 +181,6 @@ def get_total():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port = 5007)
+    app.run(debug=True, port=5007)
 
 session.close()
