@@ -40,21 +40,11 @@
             </div>
 <!--DATA CONTAINER STARTS HERE-->
             <div class="data-container row">
-<!--                <div class="summary-container box-shadow col-md-12">-->
-<!--                    <div class="col-md-12">-->
-<!--                        <h4 class="summary-styling">Yearly Summary</h4>-->
-<!--                    </div>-->
-<!--                    <div style="width: 8%; height: 0px; left: 20%; top: 16%; position: absolute; transform: rotate(90deg); opacity:0.2; transform-origin: 0 0; border: 1px black solid"></div>-->
-<!--                    <div style="width: 8%; height: 0px; left: 40%; top: 16%; position: absolute; transform: rotate(90deg); opacity:0.2; transform-origin: 0 0; border: 1px black solid"></div>-->
-<!--                    <div style="width: 8%; height: 0px; left: 60%; top: 16%; position: absolute; transform: rotate(90deg); opacity:0.2; transform-origin: 0 0; border: 1px black solid"></div>-->
-<!--                    <div style="width: 8%; height: 0px; left: 80%; top: 16%; position: absolute; transform: rotate(90deg); opacity:0.2; transform-origin: 0 0; border: 1px black solid"></div>-->
-<!--                </div>-->
                 <div class="row">
                     <div class="l-container box-shadow">
-                        <div class="col-md-6 text-styling">
-                            my chart 1 here
-                            <!--            <div id="plotclass"></div>-->
-                        </div>
+                    
+                        <div id="bar" style="max-height: 300px;"></div>
+                        
                     </div>
                     <div class="r-container box-shadow">
                         <div class="col-md-6 text-styling">
@@ -70,10 +60,7 @@
                 </div>
                 <div class="row">
                     <div class="table-container box-shadow col-md-12">
-                        <div class="col-md-12 text-styling">
-                            <div id="data-table"></div>
-                            data table here
-                        </div>
+                            <div id="data-table" style="top:4%;"></div>
                     </div>
                 </div>
             </div>
@@ -81,18 +68,29 @@
         </div>
     </div>
     <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-  crossorigin=""></script>
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- D3 JavaScript -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- leaflet-choropleth JavaScript -->
+    <script type="text/javascript" src="static/js/choropleth.js"></script>
+    <!--        Tabulator-->
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
 
-<!-- D3 JavaScript -->
-<script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Our JavaScript Codes -->
+        <!--    Paul's Leaflet code-->
+    <script type="text/javascript" src="logic-PS.js"></script>
+        <!--    Andrew's Tabulator code-->
+    <script type="text/javascript" src="static/js/tabulator.js"></script>
+
+<!-- Plotly JavaScript -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- leaflet-choropleth JavaScript -->
 <script type="text/javascript" src="static/js/choropleth.js"></script>
 
 <!-- Our JavaScript -->
 <script type="text/javascript" src="logic-PS.js"></script>
+<script type="text/javascript" src="logic-RG.js"></script>
 <!--        Tabulator-->
 <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
     
