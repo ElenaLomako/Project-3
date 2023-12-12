@@ -20,7 +20,7 @@ db_params = {
     'host': 'localhost',
     'port': '5432',
     'user': 'postgres',
-    'password': 'POSTGRES',
+    'password': 'postgres',
     'database': 'project 3',
 }
 
@@ -37,7 +37,7 @@ for class_name in Base.classes.keys():
     print(class_name)
 
 # Save references to each table
-#Keys_table = Base.classes.key_data
+Keys_table = Base.classes.key_data
 Residential = Base.classes.residential
 Commercial = Base.classes.commercial
 Industrial = Base.classes.industrial
@@ -54,7 +54,6 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-=======
 CORS(app)
 
 # Flask Routes
@@ -66,7 +65,7 @@ def welcome():
     """List all available api routes."""
     return (
         f"Available Routes:<br/>"
-        # f"/api/v1.0/keys<br/>"
+        f"/api/v1.0/keys<br/>"
         f"/api/v1.0/residential<br/>"
         f"/api/v1.0/commercial<br/>"
         f"/api/v1.0/industrial<br/>"
@@ -88,8 +87,8 @@ def welcome():
 #         keys_data_query.append(key_dict)
 
 #     return jsonify(keys_data_query)
-=======
 @app.route("/api/v1.0/keys")
+@cross_origin()
 def keys_data():
      """Return data from the keys table."""
      results = session.query(Keys_table.id, Keys_table.year, Keys_table.state).all()
@@ -175,6 +174,7 @@ def get_transportation():
     return jsonify(Transportation_data_query)
 
 @app.route("/api/v1.0/all_sectors_combined")
+@cross_origin()
 def get_total():
     """Return data from the total table."""
     results = session.query(Total.id, Total.revenue, Total.sales, Total.customers, Total.price).all()
