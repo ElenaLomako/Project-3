@@ -8,6 +8,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.automap import automap_base
 
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 #################################################
 # Database Setup
@@ -18,7 +19,7 @@ db_params = {
     'host': 'localhost',
     'port': '5432',
     'user': 'postgres',
-    'password': 'postgres',
+    'password': 'POSTGRES',
     'database': 'project 3',
 }
 
@@ -49,7 +50,7 @@ session = Session(engine)
 # Flask Setup
 #################################################
 app = Flask(__name__)
-
+CORS(app)
 # Flask Routes
 #################################################
 @app.route("/")
@@ -65,19 +66,19 @@ def welcome():
         f"/api/v1.0/all_sectors_combined<br/>"
     )
 @app.route("/api/v1.0/keys")
-# def keys_data():
-#     """Return data from the keys table."""
-#     results = session.query(Keys_table.id, Keys_table.year, Keys_table.state).all()
-#     # Create a list of id, year, state that will be appended with dictionary values for id, year, state queried above
-#     keys_data_query = []
-#     for id, year, state in results:
-#         key_dict = {}
-#         key_dict["id"] = id
-#         key_dict["year"] = year
-#         key_dict["state"] = state
-#         keys_data_query.append(key_dict)
+def keys_data():
+     """Return data from the keys table."""
+     results = session.query(Keys_table.id, Keys_table.year, Keys_table.state).all()
+     # Create a list of id, year, state that will be appended with dictionary values for id, year, state queried above
+     keys_data_query = []
+     for id, year, state in results:
+         key_dict = {}
+         key_dict["id"] = id
+         key_dict["year"] = year
+         key_dict["state"] = state
+         keys_data_query.append(key_dict)
 
-#     return jsonify(keys_data_query)
+     return jsonify(keys_data_query)
 
 
 

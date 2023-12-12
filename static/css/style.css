@@ -109,6 +109,7 @@
   width: 45%;
   height: 32%;
   left: 5%;
+  max-height: fit-content;
   top: 2%;
   position: absolute;
   background: #F7EDED;
