@@ -4,7 +4,7 @@
 
     // Use D3 to fetch the csv file
     d3.csv(dataUrl).then(function (data) {
-      // console.log(data);
+      console.log(data);
       dropdownYear();
       dropdownSector();
       bubbleChart(data, 2020);
@@ -43,7 +43,7 @@ function bubbleChart(a, year){
 
  
   let info = a.filter(yr => yr.id.slice(2,6) === year.toString()); 
-  console.log(info);
+  // console.log(info);
  
   // Exclude a specific state
    info = info.filter(entry => entry.id.slice(0, 2) !== "US");

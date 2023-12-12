@@ -8,9 +8,9 @@ function fetchData(url) {
 }
 
 // Function to build bar plot using Plotly
-function buildBarPlot(year, sectorData, keysData) {
+function buildBarPlot(year, allSectorsDir, keysData) {
   // Merge data based on the common key 'id'
-  const mergedData = sectorData.map(s => {
+  const mergedData = allSectorsDir.map(s => {
     const keyData = keysData.find(k => k.id === s.id);
     return { ...s, ...keyData };
   });

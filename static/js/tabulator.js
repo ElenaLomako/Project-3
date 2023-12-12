@@ -1,21 +1,20 @@
 // Define endpoints
 const Baseurl = "http://127.0.0.1:5007"
-const residentialDir = "/api/v1.0/residential"
-const commercialDir = "/api/v1.0/commercial"
-const industrialDir = "/api/v1.0/industrial"
-const transportationDir = "/api/v1.0/transportation"
-const allSectorsDir = "/api/v1.0/all_sectors_combined"
-const url = Baseurl.concat(allSectorsDir)
+const residentialDir = "http://127.0.0.1:5007/api/v1.0/residential"
+const commercialDir = "http://127.0.0.1:5007/api/v1.0/commercial"
+const industrialDir = "http://127.0.0.1:5007/api/v1.0/industrial"
+const transportationDir = "http://127.0.0.1:5007/api/v1.0/transportation"
+const allSectorsDir = "http://127.0.0.1:5007/api/v1.0/all_sectors_combined"
 
 // Fetch data
-d3.json(url).then(function(data) {
+d3.json(allSectorsDir).then(function(data) {
     buildTable(data)
 });
 
 // Generate table
 function buildTable(data) {
     // Parse sector data
-    d3.json(url).then((data) => {
+    d3.json(allSectorsDir).then((data) => {
         let rowMenu = [
             {
             label:"<i class='fas fa-user'></i> Change Name",
