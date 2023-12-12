@@ -1,14 +1,14 @@
 
 // getting the data from the csv directly
-let data = "Resources/sales_annual_commercial.csv";
+let data = "http://127.0.0.1:5007/api/v1.0/residential";
 let stateNames = "Resources/state_long_names.csv";
 let jsonFile = "Resources/us-states.json";
 
 
-d3.csv(data).then(function(data){
-    // console.log(data);
+d3.json(data).then(function(data){
+    console.log(data);
    
-    yearHeat(data, 2020);
+    yearHeat(data, 2016);
 
 });
 

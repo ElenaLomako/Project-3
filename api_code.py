@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from sqlalchemy import create_engine
 from sqlalchemy.ext.automap import automap_base
+from flask_cors import CORS, cross_origin
 
 from flask import Flask, jsonify
 
@@ -49,10 +50,14 @@ session = Session(engine)
 # Flask Setup
 #################################################
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Flask Routes
 #################################################
 @app.route("/")
+@cross_origin()
+
 def welcome():
     """List all available api routes."""
     return (
@@ -64,7 +69,7 @@ def welcome():
         f"/api/v1.0/transportation<br/>"
         f"/api/v1.0/all_sectors_combined<br/>"
     )
-@app.route("/api/v1.0/keys")
+# @app.route("/api/v1.0/keys")
 # def keys_data():
 #     """Return data from the keys table."""
 #     results = session.query(Keys_table.id, Keys_table.year, Keys_table.state).all()
