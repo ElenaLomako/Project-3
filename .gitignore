@@ -5,6 +5,9 @@ passwords.py
 .idea
 .ipynb_checkpoints
 
+# passwords file
+passwords.py
+
 # DS_store
 .DS_Store
 
