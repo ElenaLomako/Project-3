@@ -18,20 +18,21 @@ Technologies and API's
 
 ## Scope and Responsibilities
 * Andrew
-  *  Subset main table
-  *  Setup schema in SQL
-  *  Build HTML
-  *  JS scripts
+  *  Data inspection and subset
+  *  README/ proposal setup
+  *  Build HTML/ CSS 
+  *  Extraneous interactive web elements (js-d3)
 * Riya
-  * JS Scripts
+  * Bar Visualization (js-plotly)
+  * Bubble Visualization (js-plotly)
 * Paul
-  *  JS Scripts
+  *  Spatial Heatmap (js-leaflet)
 * Elena:
-  *  Setup schema in SQL
-  *  Flask setup
+  *  Setup SQL Database (sql)
+  *  Flask setup (py)
 * Madeline:
-  *  HTML formatting
-  *  JS Scripts
+  *  Data filters and metadata (js)
+
 
 Data source: https://www.eia.gov/electricity/data.php#sales
 
