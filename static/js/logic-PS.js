@@ -1,13 +1,13 @@
 
 // getting the data from the csv directly
-let data = "http://127.0.0.1:5007/api/v1.0/residential";
+let allSectorsDir = "http://127.0.0.1:5007/api/v1.0/residential";
 let stateNames = "Resources/state_long_names.csv";
 let jsonFile = "Resources/us-states.json";
 
 
-d3.json(data).then(function(data){
+d3.json(allSectorsDir).then(function(data){
     console.log(data);
-   
+
     yearHeat(data, 2016);
 
 });
@@ -40,7 +40,7 @@ function yearHeat(data, year) {
                 }
             }
         });
-    
+
         // console.log(result);
         // found a json file online that provides all the coordinates necessary to map the US states
         d3.json(jsonFile).then(function (usStates) {
@@ -48,7 +48,7 @@ function yearHeat(data, year) {
             // creaates a base layer of the country
             let street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        
+
             });
             // displaying the map
             let myMap = L.map("map", {
@@ -76,11 +76,11 @@ function yearHeat(data, year) {
                 onEachFeature: function(feature, layer) {
                     let statename = feature.properties.name;
                     let stateData = result.find(item => item.state_name === statename);
-                
+
                     if (stateData) {
                         layer.bindPopup(
-                            
-                            "<h6><strong> State: </strong>" + stateData.state_name + "</h6>" +  
+
+                            "<h6><strong> State: </strong>" + stateData.state_name + "</h6>" +
                             "<h6><strong> State Abbreviation: </strong>" + stateData.state_code + "</h6>" + "<br/> " +
                             "<h6><strong> Megawatt hours: </strong>" + numberFormat(stateData.sales) + "</h6>" +
                             "<h6><strong> Price per hour: </strong>" + currencyFormat(stateData.price/100) + "</h6>" +
@@ -112,20 +112,20 @@ function yearHeat(data, year) {
             })
 
             // Add the minimum and maximum on the legend
-            let legendInfo = "<h4 style='font-weight: bold;'>Price of Megawatts per Hour</h4>" + 
+            let legendInfo = "<h6 style='font-weight: bold;'>Price of Megawatts per Hour</h6>" +
             "<div class=\"labels\">" +
             "<div class=\"min\">" + currencyFormat(minLimit/100) + "</div>" +
             "<div class=\"max\">" + currencyFormat(maxLimit/100) + "</div>" +
             "</div>";
-            
+
             div.innerHTML = legendInfo;
             // Adds the colors from min to max
             limits.forEach(function(limit, index) {
                 labels.push("<li style=\"background-color: " + colors[index] + "\"></li>");
               });
-            
+
             div.innerHTML += "<ul>" + labels.join("") + "</ul>";
-            
+
             return div;
             };
 

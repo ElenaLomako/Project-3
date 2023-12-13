@@ -38,8 +38,10 @@ function buildBarPlot(year, allSectorsDir, keysData) {
   // Define layout for the bar chart
   const layout = {
     title: `Prices for Year ${year}`,
-    yaxis: { title: "Price" },
-    xaxis: { title: "State" }
+    width: 900,
+    height: 350,
+    yaxis: { title: "Price per kwH (in cents)" },
+    // xaxis: { title: "State" }
   };
 
   // Create the bar chart using Plotly
