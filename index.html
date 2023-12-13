@@ -26,10 +26,10 @@
                     <div class="filters"><h5>Filters</h5>
                         <br>
                         <h6>Sector</h6>
-                            <select id="selDataset" onchange="optionChanged(this.value)"></select><br>
+                            <select style="width: 150px" id="selDataSector" onchange="optionChanged(this.value)"></select><br>
                         <br>
                         <h6>Year</h6>
-                            <select id="selDatasector" onchange="optionChanged(this.value)"></select>
+                            <select style="width: 150px" id="selDataYear" onchange="optionChanged(this.value)"></select>
                     </div>
                 </div>
                 <div class="hyperlink-container">
@@ -41,12 +41,12 @@
 <!--DATA CONTAINER STARTS HERE-->
             <div class="data-container row">
                 <div class="row">
-                    <div class="l-container box-shadow" style="overflow: hidden">
+                    <div class="l-container box-shadow" style="overflow: scroll">
                         <div style="scale: 100%; height:100%" id="bar"></div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="r-container box-shadow" style="overflow: hidden">
+                    <div class="r-container box-shadow" style="overflow: scroll">
                             <div id="bubble" style="scale: 100%; height:100%"></div>
                     </div>
                 </div>
@@ -74,14 +74,18 @@
     <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
 
     <!-- Our JavaScript Codes -->
+        <!--    Andrew's's Bubble plot/ Dropdown functionality code-->
+    <script type="text/javascript" src="static/js/logic-AC.js"></script>
         <!--    Paul's Leaflet code-->
     <script type="text/javascript" src="static/js/logic-PS.js"></script>
-        <!--    Andrew's Tabulator code-->
-    <script type="text/javascript" src="static/js/tabulator.js"></script>
         <!--    Riya's Bar plot code-->
     <script type="text/javascript" src="static/js/logic-RG.js"></script>
+        <!--    Andrew's Tabulator code-->
+    <script type="text/javascript" src="static/js/tabulator.js"></script>
         <!--    Madeline's Bubble plot code-->
     <script type="text/javascript" src="static/js/logic-MC.js"></script>
+        <!--    Andrew's Initialization code-->
+    <script type="text/javascript" src="static/js/init-AC.js"></script>
 
 <!-- Plotly JavaScript -->
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>

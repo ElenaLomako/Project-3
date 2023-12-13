@@ -1,41 +1,38 @@
   // URL
     let dataUrl = "Resources/sales_annual_residential.csv";
-    let stateNames = "Resources/state_long_names.csv";
 
     // Use D3 to fetch the csv file
     d3.csv(dataUrl).then(function (data) {
       console.log(data);
-      dropdownYear();
-      dropdownSector();
       bubbleChart(data, 2020);
     });
 
 // *** DROPDOWNS FOR THE YEARS AND SECTORS***//
 
 // Function to populate the year dropdown
-    function dropdownYear() {
-      let dropdownMenu = d3.select("#selDataset");
-      
-      dropdownMenu.html(""); // Clears out dropdown selection
-
-      // Loop to add options for the years in the dropdown
-      for (let i = 0; i < 12; i++) {
-          dropdownMenu.append("option").text(2010+i).attr("value", 2010+i);
-        }
-      };    
-
-
-    function dropdownSector() {
-      let dropdownMenu = d3.select("#selDatasector");
-      
-      dropdownMenu.html(""); // Clears out dropdown selection
-
-      sectors = ["residential", "commercial", "industrial", "transportation", "all_sectors_combined"];
-
-      for (let i = 0; i < sectors.length; i++) {
-          dropdownMenu.append("option").text(sectors[i]).attr("value", sectors[i]);
-        }
-      };
+//     function dropdownYear() {
+//       let dropdownMenu = d3.select("#selDataset");
+//
+//       dropdownMenu.html(""); // Clears out dropdown selection
+//
+//       // Loop to add options for the years in the dropdown
+//       for (let i = 0; i < 12; i++) {
+//           dropdownMenu.append("option").text(2010+i).attr("value", 2010+i);
+//         }
+//       };
+//
+//
+//     function dropdownSector() {
+//       let dropdownMenu = d3.select("#selDatasector");
+//
+//       dropdownMenu.html(""); // Clears out dropdown selection
+//
+//       sectors = ["residential", "commercial", "industrial", "transportation", "all_sectors_combined"];
+//
+//       for (let i = 0; i < sectors.length; i++) {
+//           dropdownMenu.append("option").text(sectors[i]).attr("value", sectors[i]);
+//         }
+//       };
 // *** DROPDOWNS FOR THE YEARS AND SECTORS***//
 
 // *** BUBBLE CHART***//
@@ -104,12 +101,15 @@ function bubbleChart(a, year){
     // Layout configuration
     let layout = {
       title: "Revenue by State",
+      height: 350,
+      width: 900,
       // xaxis: {
       //   title: "States",
       //   tickangle: 40, // Rotate the x-axis labels by 40 degrees
       // },
       yaxis: {
-        title: "Revenue",
+        title: "Revenue (in USD)",
+        range: [0, 30000000],
       },
     };
 
