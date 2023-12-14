@@ -1,7 +1,8 @@
 // Initialize
 function init(){
     generateDropDownMenus();
-    fetchDataAndUpdate("residential", null);
+    optionChanged();
+    // fetchDataAndUpdate("residential", 291);
 }
 
 function generateDropDownMenus() {
@@ -30,6 +31,7 @@ function optionChanged() {
     fetchDataAndUpdate(selectedSector, selectedYear);
 }
 
+let mapCounter = 0;
 function fetchDataAndUpdate(selectedSector, selectedYear){
     let url = Baseurl + endpoints[selectedSector];
     // console.log(url)
@@ -41,9 +43,19 @@ function fetchDataAndUpdate(selectedSector, selectedYear){
         }
         // Generate all plots
         buildTable(data); // Andrew's Tabulator element
-        bubbleChart(data) // Mad's Bubble Chart
+
         yearHeat(data, selectedYear) // Pauls Heatmap
-        // buildBarPlot(data); // Riya's Bar plot element
+        // console.log(myMap)
+        bubbleChart(data, selectedYear.toString()) // Mad's Bubble Chart
+        // console.log(typeof(selectedYear))
+
+        Promise.all([fetchData(url), fetchData(keysUrl)])
+            .then(([sectorData, keysData]) => {
+                // Specify the desired year
+                const targetYear = parseInt(selectedYear); // You can change this to the desired year
+                buildBarPlot(targetYear, sectorData, keysData);
+                // console.log(targetYear, sectorData, keysData)
+            })
     })
 }
 
