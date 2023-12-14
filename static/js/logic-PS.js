@@ -3,14 +3,16 @@
 let allSectorsDir = "http://127.0.0.1:5007/api/v1.0/residential";
 let stateNames = "Resources/state_long_names.csv";
 let jsonFile = "Resources/us-states.json";
+let myMap = null;
 
 
-d3.json(allSectorsDir).then(function(data){
-    console.log(data);
+// d3.json(allSectorsDir).then(function(data){
+//     console.log(data);
+//
+//     yearHeat(data, 2016);
+//
+// });
 
-    yearHeat(data, 2016);
-
-});
 
 // creating a function that takes the data and a year to create a map
 function yearHeat(data, year) {
@@ -41,6 +43,8 @@ function yearHeat(data, year) {
             }
         });
 
+
+
         // console.log(result);
         // found a json file online that provides all the coordinates necessary to map the US states
         d3.json(jsonFile).then(function (usStates) {
@@ -50,12 +54,19 @@ function yearHeat(data, year) {
               attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 
             });
-            // displaying the map
-            let myMap = L.map("map", {
-                center: [37.09, -93.71],
-                zoom: 4,
-                layers: [street]
-            });
+            try {
+                myMap = L.map("map", {
+                    center: [37.09, -93.71],
+                    zoom: 4,
+                    layers: [street]
+                });
+            } catch (error) {
+                myMap.remove()
+                d3.select("map").html("")
+                // Expected output: ReferenceError: nonExistentFunction is not defined
+                // (Note: the exact output may be browser-dependent)
+            }
+
             // using choropleth to create a color range amongst States based on the price
             let geojson = L.choropleth(usStates, {
                 valueProperty: function(feature){
@@ -133,7 +144,10 @@ function yearHeat(data, year) {
             legend.addTo(myMap);
             });
     });
+    return myMap;
 }
+
+
 // formatting some numbers for displaying purposes
 function currencyFormat(number){
     return Intl.NumberFormat('en-US', {
@@ -156,4 +170,8 @@ function priceFormat(number){
         minimumFractionDigits: 2
     }).format(number);
 }
+
+
+
+
 

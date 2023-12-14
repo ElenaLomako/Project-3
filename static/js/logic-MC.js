@@ -2,10 +2,10 @@
     let dataUrl = "Resources/sales_annual_residential.csv";
 
     // Use D3 to fetch the csv file
-    d3.csv(dataUrl).then(function (data) {
-      console.log(data);
-      bubbleChart(data, 2020);
-    });
+    // d3.csv(dataUrl).then(function (data) {
+    //   console.log(data);
+    //   bubbleChart(data, 2020);
+    // });
 
 // *** DROPDOWNS FOR THE YEARS AND SECTORS***//
 
@@ -38,7 +38,6 @@
 // *** BUBBLE CHART***//
 function bubbleChart(a, year){
 
- 
   let info = a.filter(yr => yr.id.slice(2,6) === year.toString()); 
   // console.log(info);
  
@@ -109,7 +108,6 @@ function bubbleChart(a, year){
       // },
       yaxis: {
         title: "Revenue (in USD)",
-        range: [0, 30000000],
       },
     };
 

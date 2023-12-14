@@ -14,6 +14,7 @@ function buildBarPlot(year, allSectorsDir, keysData) {
     const keyData = keysData.find(k => k.id === s.id);
     return { ...s, ...keyData };
   });
+  // console.log(year, allSectorsDir, keysData)
 
   // Filter data for the specified year
   const yearData = mergedData.filter(entry => entry.year === year);
@@ -49,10 +50,11 @@ function buildBarPlot(year, allSectorsDir, keysData) {
 }
 
 // Fetch data from API endpoints
-Promise.all([fetchData(sectorUrl), fetchData(keysUrl)])
-  .then(([sectorData, keysData]) => {
-    // Specify the desired year
-    const targetYear = 2021; // You can change this to the desired year
-    buildBarPlot(targetYear, sectorData, keysData);
-  })
-  .catch(error => console.error("Error fetching data:", error));
+// Promise.all([fetchData(sectorUrl), fetchData(keysUrl)])
+//   .then(([sectorData, keysData]) => {
+//     // Specify the desired year
+//     const targetYear = 2021; // You can change this to the desired year
+//     buildBarPlot(targetYear, sectorData, keysData);
+//     // console.log(targetYear, sectorData, keysData)
+//   })
+//   .catch(error => console.error("Error fetching data:", error));
